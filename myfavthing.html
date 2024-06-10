@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>My favourite things! </title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+
+<style>
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f5cfff;
+  padding: 10px 20px;
+}
+
+.header img {
+  height: 50px; 
+  background: #f5cfff;
+}
+
+.header .dropdown-container {
+  display: flex;
+  gap: 10px; 
+  margin-left: auto;
+}
+
+.dropbtn {
+  background-color: #f97971;
+  color: white;
+  padding: 10px;
+  font-size: 15px;
+  border: none;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #fedacc;
+  min-width: 100px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 10px 10px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #ddd;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {background-color: #976d5c;}
+
+body {
+  background-image: url('pic9.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  margin: 0;
+  font-family: 'lucida-console', monospace;
+}
+
+.container {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  padding: 20px;
+  background-color: none;
+  font-size: 19px;
+}
+
+.inline-paragraph {
+  flex: 1;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.inline-paragraph b {
+  font-size: 28px;
+}
+
+.marquee {
+  color: #10001c;
+  font-family: 'lucida-console', monospace;
+  font-size: 35px;
+  text-align: center;
+  color: #940031;
+}
+
+.section-title {
+  color: #10001c;
+  font-family: 'lucida-console', monospace;
+  font-size: 35px;
+  text-align: center;
+  color: #940031;
+}
+.rounded-image {
+    border-radius: 15px;
+}
+.jump-button {
+            background-color: #f5cfff;
+            color: #940031;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border: none;
+            border-radius: 4px;
+            float: right;
+        }
+
+.footer-2 {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #f5cfff;
+    color: #940031;
+    text-align: center;
+    padding: 10px 0;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.2);
+}
+a:hover {
+            color: #bf0020; 
+        }
+<style type="text/css">
+BODY {overflow-x: hidden;}
+
+</style>
+
+
+<body> 
+
+<script language="JavaScript1.2">
+<!--
+
+/*
+Submitted by Marcin Wojtowicz [one_spook@hotmail.com] 
+Featured on JavaScript Kit (http://javascriptkit.com)
+Modified by JK to be IE7+/ Firefox compatible
+For this and over 400+ free scripts, visit http://javascriptkit.com
+*/
+
+var trailLength = 8 // The length of trail (8 by default; put more for longer "tail")
+var path = "star.png" // URL of your image
+
+var standardbody=(document.compatMode=="CSS1Compat")? document.documentElement : document.body //create reference to common "body" across doctypes
+var i,d = 0
+
+function initTrail() { // prepares the script
+	images = new Array() // prepare the image array
+	for (i = 0; i < parseInt(trailLength); i++) {
+		images[i] = new Image()
+		images[i].src = path
+	}
+	storage = new Array() // prepare the storage for the coordinates
+	for (i = 0; i < images.length*3; i++) {
+		storage[i] = 0
+	}
+	for (i = 0; i < images.length; i++) { // make divs for IE and layers for Navigator
+		document.write('<div id="obj' + i + '" style="position: absolute; z-Index: 100; height: 0; width: 0"><img src="' + images[i].src + '"></div>')
+	}
+	trail()
+}
+function trail() { // trailing function
+	for (i = 0; i < images.length; i++) { // for every div/layer
+		document.getElementById("obj" + i).style.top = storage[d]+'px' // the Y-coordinate
+		document.getElementById("obj" + i).style.left = + storage[d+1]+'px' // the X-coordinate
+		d = d+2
+	}
+	for (i = storage.length; i >= 2; i--) { // save the coordinate for the div/layer that's behind
+		storage[i] = storage[i-2]
+	}
+	d = 0 // reset for future use
+	var timer = setTimeout("trail()",10) // call recursively 
+}
+function processEvent(e) { // catches and processes the mousemove event 
+	if (window.event) { // for IE
+		storage[0] = window.event.y+standardbody.scrollTop+10
+		storage[1] = window.event.x+standardbody.scrollLeft+10
+	} else {
+		storage[0] = e.pageY+12
+		storage[1] = e.pageX+12
+	}
+}
+
+	initTrail() 
+	document.onmousemove = processEvent // start capturing
+
+//-->
+</script>
+
+
+<marquee>
+  <b>
+    <p style="color: #10001c; font-family: 'lucida-console', monospace; font-size: 35px; text-align: center; color:#940031;">
+      Welcome to the page about my favourite things!
+    </p>
+  </b>
+</marquee>
+
+
+<div class="header">
+  <img src="hello.png" alt="Logo"> 
+  <div class="dropdown-container">
+    <div class="dropdown">
+      <button class="dropbtn">HOME</button>
+      <div class="dropdown-content">
+        <a href="index.html"> Home Page </a>
+      </div>
+    </div>
+
+    <div class="dropdown">
+      <button class="dropbtn">ABOUT ME</button>
+      <div class="dropdown-content">
+        <a href="resume.html">Resume</a>
+        <a href="biodata.html">Biodata</a>
+        <a href="feedback-form.html">Feedback form</a>
+      </div>
+    </div>
+
+    <div class="dropdown">
+      <button class="dropbtn">EDUCATION</button>
+      <div class="dropdown-content">
+        <a href="education-1.html" target="_blank">Middle school</a>
+        <a href="education-2.html" target="_blank">Highschool</a>
+        <a href="education-3.html" target="_blank">University</a>
+      </div>
+    </div>
+
+    <div class="dropdown">
+      <button class="dropbtn">GALLERY</button>
+      <div class="dropdown-content">
+        <a href="my-family.html">My family!</a>
+        <a href="myfavthing.html">My favourite things</a>
+        <a href="hobby.html">Hobby</a>
+      </div>
+    </div>
+  </div>
+</div>
+<p>
+
+<center>
+  <b> <p style="color: #10001c; font-family: 'lucida-console', monospace; font-size: 35px; text-align: center; color:#940031;"> My favourite musician! </p> </b>
+</center>
+
+<center>
+<iframe style="border-radius:15px" src="https://open.spotify.com/embed/artist/3srPc1Mytv5GmTWqsQuoXW?utm_source=generator" width="600" height="400" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy">
+</iframe> 
+
+<iframe style="border-radius:15px" src="https://open.spotify.com/embed/artist/1vVHevk2PD45epYnDi9CCc?utm_source=generator" width="600" height="400" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+<p> </center>
+
+<div class="container">
+  <div class="inline-paragraph">
+    <b>Frederic.</b><br>
+    Frederic (フレデリック) is a Japanese rock band from Kobe formed in 2009. The band is signed to A-Sketch Music Label and has, as of 2015, released 4 EPs and multiple singles. In 2015, Frederic won the Kansai block local award at the 7th CD Shop Awards for their album oddloop. This album was released on September 24, 2014, and was also their debut at a major record label. Their name comes from Leo Lionni's work Federick, the band was formed by the two twins Mihara Kenji and Mihara Koji.<br>
+    Frederic currently consists of:
+    <ul>
+      <li>Kenji Mihara (三原健司, Mihara Kenji) – Vocals, guitar</li>
+      <li>Koji Mihara (三原康司, Mihara Kōji) – Bass guitar, vocals</li>
+      <li>Ryuji Akagashira (赤頭隆児, Akagashira Ryūji) – Guitar</li>
+      <li>Takeru Takahashi (高橋武, Takahashi Takeru) - Drums</li>
+    </ul> <p>
+Frederic, a Japanese band, is known for blending rock, pop, funk, and electronic elements to create an upbeat and catchy sound. Their music features repetitive hooks, dynamic vocals, and playful, surreal lyrics. They pay significant attention to visual aesthetics, with colorful and quirky music videos and album art that complement their fun, danceable tracks, making their performances highly engaging.
+
+  </div>
+
+  <div class="inline-paragraph">
+    <b>Jack Stauber.</b><br>
+    Jack Stauber (born April 6, 1996) is an American musician, animator, and internet personality based in Pittsburgh, Pennsylvania. He is known for his VHS-aesthetic live-action, stop motion, and computer animated music videos, which have been featured in internet memes.<p>
+    Stauber has released the albums Finite Form (2013), Viator (2015), Pop Food (2017), and HiLo (2018). The first two tracks of Pop Food, "Buttercup" & "Oh Klahoma," went viral on TikTok. In 2020, he won the Shorty Award for Best in Weird.Stauber is well known for his hypnagogic pop, avant-pop, and synth-pop music. Stauber's unique vocal effects are developed in the shower, and are inspired by Donovan's song "Hurdy Gurdy Man". Stauber collects objects to create sounds to use in songs, and has a drawer filled with "various noise-makers" he has collected <p>
+
+Stauber's videos utilize a mixture of different types of media, such as traditional animation, 3D computer animation, claymation, and live action. Almost all voices in these videos are done by Stauber himself. His videos are usually separated into three styles: "surreal", characters with odd and striking facial expressions and frequently part of his claymations, "colorful", which are usually featured in his VHS animations and music videos, and "Stauber faces", light-skinned characters with cartoon noses.
+  </div>
+</div>
+
+
+<center>
+  <b> <p style="color: #10001c; font-family: 'lucida-console', monospace; font-size: 35px; text-align: center; color:#940031;"> My favourite actor! </p> </b>
+</center>
+
+<center> <img src="ben.jpg" width="450" height="300" class="rounded-image"> </center>
+
+<center> <b> <p style="font-size: 28px;"> Benedict Cumberbatch </center> </b> </p>
+
+<center> <p style="font-size: 19px;">
+ Benedict Cumberbatch (born July 19, 1976, London, England) is an acclaimed <br>
+British motion-picture, theater, and television actor known for his portrayals of intelligent, often upper-crust characters, <br> 
+for his deep resonant voice, and for his distinctive name. He gained widespread popularity playing a modern Sherlock Holmes <br> 
+in the television series Sherlock (2010– ) and subsequently garnered a succession of substantial roles in mainstream features. </center> <p> </p>
+
+<center>
+  <b> <p style="color: #10001c; font-family: 'lucida-console', monospace; font-size: 35px; text-align: center; color:#940031;"> My favourite video game! </p> </b>
+</center>
+
+<center> <img src="enstar.png" width="480" height="250" class="rounded-image"> 
+<img src="ace.jpg" width="470" height="250" class="rounded-image"> </center>
+
+
+<div class="container">
+  <div class="inline-paragraph">
+    <b>Ensemble Stars!!.</b><br>
+    Ensemble Stars! (あんさんぶるスターズ！, Ansanburu Sutāzu!) is a Japanese game franchise developed by Cacalia Studio and published by Happy Elements K.K., the Japanese division of the Chinese company Happy Elements. It is a spin-off of the 2012 game Ensemble Girls! It was first released as a life simulation and gacha game on Google Play on April 28, 2015, and on the App Store on May 1, 2015.<br>
+
+     On March 9, 2020, Ensemble Stars! was rebranded and relaunched under the title Ensemble Stars!! (あんさんぶるスターズ！！, Ansanburu Sutāzu!!, with two exclamation marks), with the original app split into two games catering to different gameplay styles: Ensemble Stars!! Basic, the original game; and Ensemble Stars!! Music, a rhythm game. <p>
+
+The success of the game led to several stage plays and manga adaptations. An anime television series by David Production aired from July 7 to December 22, 2019. A theatrical anime premiered on March 4, 2022.
+
+  </div>
+
+  <div class="inline-paragraph">
+    <b>Ace Attorney.</b><br>
+    Ace Attorney is a visual novel adventure video games franchise developed by Capcom. With storytelling fashioned after legal dramas, the first entry in the series, Phoenix Wright: Ace Attorney, was released in 2001; since then, five further main series games, as well as various spin-offs, prequels and high-definition remasters for newer game consoles, have been released. Additionally, the series has seen adaptations in the form of a live-action film and an anime, and has been the base for manga series, drama CDs, musicals and stage plays.<p>
+
+    The player takes the roles of various defense attorneys, including Phoenix Wright, his mentor Mia Fey, and his understudies Apollo Justice and Athena Cykes, who investigate cases and defend their clients in court; they find the truth by cross-examining witnesses and finding inconsistencies between the testimonies and the evidence they have collected. The cases all last a maximum of three days, with the judge determining the outcome based on evidence presented by the defense attorney and the prosecutor. 
+<p>
+  </div>
+</div>
+
+<center>
+  <b> <p style="color: #10001c; font-family: 'lucida-console', monospace; font-size: 35px; text-align: center; color:#940031;"> My favourite Food! </p> </b>
+</center>
+
+<center> <img src="fc.jpg" width="450" height="250" class="rounded-image"> 
+<img src="matcha.jpg" width="450" height="250" class="rounded-image"> </center>
+
+<div class="container">
+  <div class="inline-paragraph">
+    <b>Fried chicken.</b><br>
+Fried chicken is a beloved dish that involves coating chicken pieces in seasoned flour or batter and then frying them until crispy and golden brown. This cooking method results in a crunchy exterior while keeping the meat inside tender and juicy. Originating in the Southern United States, fried chicken has become a staple comfort food with numerous regional variations and global adaptations. <p>
+
+The secret to its deliciousness often lies in the marinade, which can include buttermilk, spices, and herbs, imparting flavor and tenderness to the chicken before it is fried. The dish is commonly served with sides like mashed potatoes, coleslaw, biscuits, and gravy. Its irresistible combination of textures and flavors has made fried chicken a popular choice for casual dining, picnics, and family gatherings. Whether enjoyed hot or cold, fried chicken continues to be a universal favorite, celebrated for its satisfying taste and versatility.
+
+</div>
+  <div class="inline-paragraph">
+    <b>Matcha.</b><br>
+Matcha is a finely ground powder made from specially grown and processed green tea leaves. Originating from Japan, matcha is traditionally used in the Japanese tea ceremony but has gained global popularity for its unique flavor and health benefits. Unlike regular green tea, where the leaves are steeped and then discarded, matcha involves consuming the entire leaf, providing a more concentrated source of nutrients. 
+<p>
+This vibrant green drink is rich in antioxidants, particularly catechins, which are known for their cancer-fighting properties. It also contains L-theanine, an amino acid that promotes relaxation without causing drowsiness, and a moderate amount of caffeine that provides a sustained energy boost without the jitters often associated with coffee. Matcha can be enjoyed in various forms, from the traditional tea to lattes, smoothies, and even culinary dishes, making it a versatile and healthful addition to many diets.
+</div>
+</div>
+
+<center>
+  <b> <p style="color: #10001c; font-family: 'lucida-console', monospace; font-size: 35px; text-align: center; color:#940031;"> My favourite animal! </p> </b>
+</center>
+
+<center> <img src="cat.jpg" width="500" height="300" class="rounded-image"> </center>
+<center> <b> <p style="font-size: 28px;"> Cats. </center> </b> </p>
+
+<div class="inline-paragraph">
+<center> <p style="font-size: 19px;">
+ 
+Cats are incredibly lovable for a myriad of reasons. Their independent yet affectionate nature creates a perfect balance of companionship and self-sufficiency, making them ideal pets for many. Their soft fur and gentle purring provide a sense of comfort and tranquility, acting as a natural stress reliever. <br>
+Cats are also highly entertaining with their playful antics and curious behaviors, offering endless amusement. <br>
+Moreover, their unique personalities and ability to form strong bonds with their human companions make each relationship special and deeply rewarding. <br>
+Their elegant movements and endearing expressions add to their charm, making it easy to see why cats hold a special place in the hearts of so many.
+
+</center> <p> </p>
+<div>
+
+</body>
+
+<div style="text-align: right;">
+        <a href="#top" class="jump-button">^JUMP to top!^</a>
+</div>
+</div> <p>
+
+</div>
+    <footer class="footer-2">
+        &copy; 2024 Sofea Website. All rights reserved.
+    </footer>
+
+<center>
+    <p> <img src="blinkies.gif" width="400" height="55"> <p>
+</center>
+
+<section style="background-color:#f5cfff;">
+  <footer>
+    <center> 
+    <u> Check out my social media! </u><p>
+    <a href="https://wa.me/+601128652143" target="_blank" class="fab fa-whatsapp"> Whatsapp</a> <br> <p>
+    <a href="https://www.instagram.com/_soupeah/?next=%2F" target="_blank" class="fab fa-instagram">Instagram </a> <br> <p>
+    <a href="https://x.com/eriskyx" target="_blank" class="fas fa-envelope">Twitter</a> <br> <p>      <a href="https://x.com/eriskyx" target="_blank" class="fas fa-heart"></a> <br> <p>  <p>
+
+    </center>
+  </footer>
+</section>
+
+
+</html>
+
+

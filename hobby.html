@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> My Hobbies! </title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+
+<style>
+body {
+  background-image: url('pic8.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  margin: 0;
+  font-family: 'lucida-console', monospace;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f5cfff;
+  padding: 10px 20px;
+}
+
+.header img {
+  height: 50px; 
+  background: #f5cfff;
+}
+
+.header .dropdown-container {
+  display: flex;
+  gap: 10px; 
+  margin-left: auto;
+}
+
+.dropbtn {
+  background-color: #f97971;
+  color: white;
+  padding: 10px;
+  font-size: 15px;
+  border: none;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #fedacc;
+  min-width: 100px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 10px 10px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #ddd;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {background-color: #976d5c;}
+
+.container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin: 20px;
+}
+
+.paragraph {
+    flex: 1;
+    margin-right: 20px;
+}
+
+.video {
+    flex: 1;
+}
+.rounded-image {
+    border-radius: 15px;
+}
+.jump-button {
+            background-color: #f5cfff;
+            color: #940031;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border: none;
+            border-radius: 4px;
+            float: right;
+        }
+.footer-2 {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #f5cfff;
+    color: #940031;
+    text-align: center;
+    padding: 10px 0;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.2);
+}
+a:hover {
+            color: #bf0020; 
+        }
+<style type="text/css">
+BODY {overflow-x: hidden;}
+
+
+</style>
+
+<body>
+
+<script language="JavaScript1.2">
+<!--
+
+/*
+Submitted by Marcin Wojtowicz [one_spook@hotmail.com] 
+Featured on JavaScript Kit (http://javascriptkit.com)
+Modified by JK to be IE7+/ Firefox compatible
+For this and over 400+ free scripts, visit http://javascriptkit.com
+*/
+
+var trailLength = 8 // The length of trail (8 by default; put more for longer "tail")
+var path = "star.png" // URL of your image
+
+var standardbody=(document.compatMode=="CSS1Compat")? document.documentElement : document.body //create reference to common "body" across doctypes
+var i,d = 0
+
+function initTrail() { // prepares the script
+	images = new Array() // prepare the image array
+	for (i = 0; i < parseInt(trailLength); i++) {
+		images[i] = new Image()
+		images[i].src = path
+	}
+	storage = new Array() // prepare the storage for the coordinates
+	for (i = 0; i < images.length*3; i++) {
+		storage[i] = 0
+	}
+	for (i = 0; i < images.length; i++) { // make divs for IE and layers for Navigator
+		document.write('<div id="obj' + i + '" style="position: absolute; z-Index: 100; height: 0; width: 0"><img src="' + images[i].src + '"></div>')
+	}
+	trail()
+}
+function trail() { // trailing function
+	for (i = 0; i < images.length; i++) { // for every div/layer
+		document.getElementById("obj" + i).style.top = storage[d]+'px' // the Y-coordinate
+		document.getElementById("obj" + i).style.left = + storage[d+1]+'px' // the X-coordinate
+		d = d+2
+	}
+	for (i = storage.length; i >= 2; i--) { // save the coordinate for the div/layer that's behind
+		storage[i] = storage[i-2]
+	}
+	d = 0 // reset for future use
+	var timer = setTimeout("trail()",10) // call recursively 
+}
+function processEvent(e) { // catches and processes the mousemove event 
+	if (window.event) { // for IE
+		storage[0] = window.event.y+standardbody.scrollTop+10
+		storage[1] = window.event.x+standardbody.scrollLeft+10
+	} else {
+		storage[0] = e.pageY+12
+		storage[1] = e.pageX+12
+	}
+}
+
+	initTrail() 
+	document.onmousemove = processEvent // start capturing
+
+//-->
+</script>
+
+
+<marquee>
+  <b>
+    <p style="color: #10001c; font-family: 'lucida-console', monospace; font-size: 35px; text-align: center; color:#940031;">
+      Welcome to the page about my hobby!
+    </p>
+  </b>
+</marquee>
+
+
+<div class="header">
+  <img src="hello.png" alt="Logo"> 
+  <div class="dropdown-container">
+    <div class="dropdown">
+      <button class="dropbtn">HOME</button>
+      <div class="dropdown-content">
+        <a href="index.html"> Home Page </a>
+      </div>
+    </div>
+
+    <div class="dropdown">
+      <button class="dropbtn">ABOUT ME</button>
+      <div class="dropdown-content">
+        <a href="resume.html">Resume</a>
+        <a href="biodata.html">Biodata</a>
+        <a href="feedback-form.html">Feedback form</a>
+      </div>
+    </div>
+
+    <div class="dropdown">
+      <button class="dropbtn">EDUCATION</button>
+      <div class="dropdown-content">
+        <a href="education-1.html" target="_blank">Middle school</a>
+        <a href="education-2.html" target="_blank">Highschool</a>
+        <a href="education-3.html" target="_blank">University</a>
+      </div>
+    </div>
+
+    <div class="dropdown">
+      <button class="dropbtn">GALLERY</button>
+      <div class="dropdown-content">
+        <a href="my-family.html">My family!</a>
+        <a href="myfavthing.html">My favourite things</a>
+        <a href="hobby.html">Hobby</a>
+      </div>
+    </div>
+  </div>
+</div>
+<p>
+
+
+<center> <b> <p style=" font-size: 28px; color: #940031;"> I love playing video game! </center> </p> </b>
+
+
+<div class="container">
+        <div class="paragraph">
+             <p style="font-size: 19px;">
+                One of my favourite video game is ace attorney. It is game about lawyers defending their client by investigating the case, talking to witnesses, and presenting evidence in courtroom. Other than that, it also has a great animation, story, worlbuilding and background music. <p>
+
+<p style="font-size: 19px;">
+The gameplay involves investigating crime scenes, gathering evidence, and engaging in courtroom battles to prove the innocence of their clients. The games are known for their engaging storylines, colorful characters, and dramatic "Objection!" moments where players present evidence to contradict witnesses' testimonies. Since its debut in 2001, the franchise has gained a dedicated fanbase and expanded into various media, including anime, manga, and stage plays.
+            </p> 
+        </div>
+        <div class="video">
+    <video width="560" height="315" controls class="rounded-image">
+        <source src="aj.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+</div>
+    </div>
+
+<hr> 
+
+
+<div class="container">
+        <div class="paragraph">
+             <p style="font-size: 19px;">
+                Other than that, my favourite video game is a lso a rhythym video game because I enjoy music. Especially J-pop. The game combines story elements, where players interact with characters and follow their personal and professional growth, with rhythm-based performances where players tap along to music tracks. Ensemble Stars is celebrated for its extensive character roster, engaging storylines, and vibrant music, appealing to fans of the idol genre. <p>
+
+<p style="font-size: 19px;">
+In the rhythm game portion, players participate in live performances where they tap on-screen prompts in time with the music to score points. Successful performances help idols improve their skills and unlock new content. Additionally, players can collect and upgrade character cards, each with unique attributes and artwork, to enhance their idol unit's performance and progress in the game.
+            </p> 
+        </div>
+        <div class="video">
+    <video width="560" height="315" controls class="rounded-image">
+        <source src="enstar.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+</div>
+
+    </div>
+
+<hr>
+
+<center> <b> <p style=" font-size: 28px; color: #940031;"> I love shopping! </center> </p> </b>
+
+<center> <p style="font-size: 19px;"> 
+I love buying merchandise from a series or a video game that I like. <br>
+I sometimes buy them from an anime convention that I go together with my sister. <br>
+Other than buying merch, I also loves buying books. <br> 
+<p> </center>
+
+<center>
+<img src="m1.jpg" width="300" height="200" class="rounded-image">
+<img src="m2.jpg" width="300" height="200" class="rounded-image">
+<img src="m3.jpg" width="300" height="200" class="rounded-image">
+<img src="m4.jpg" width="300" height="200" class="rounded-image">
+<p>
+
+<img src="m5.jpg" width="300" height="200" class="rounded-image">
+<img src="m6.jpg" width="300" height="200" class="rounded-image">
+<img src="m7.jpg" width="300" height="200" class="rounded-image">
+<img src="m8.jpg" width="300" height="200" class="rounded-image">
+<p>
+
+<img src="m9.jpg" width="300" height="200" class="rounded-image">
+<img src="m10.jpg" width="300" height="200" class="rounded-image">
+<img src="m11.jpg" width="300" height="200" class="rounded-image">
+<img src="m12.jpg" width="300" height="200" class="rounded-image">
+<p>
+</center>
+
+
+<hr>
+
+<center> <b> <p style=" font-size: 28px; color: #940031;"> I love cosplaying! </center> </p> </b>
+
+
+<center>
+<p style="font-size: 19px;">
+Cosplaying and meeting other cosplayer is super fun! <br>
+I tried cosplaying once with my friend, Sara. And after that, we went to an anime convention together. <br>
+At the anime convention, I met a lot of cosplayer who are super cool! I also took a lot of picture that day. <p>
+
+<img src="c1.jpg" width="280" height="350" class="rounded-image">
+<img src="c2.jpg" width="280" height="350" class="rounded-image">
+<img src="c3.jpg" width="280" height="350" class="rounded-image">
+<img src="c4.jpg" width="280" height="350" class="rounded-image">
+<p>
+<img src="c5.jpg" width="280" height="350" class="rounded-image">
+<img src="c6.jpg" width="280" height="350" class="rounded-image">
+<img src="c7.jpg" width="280" height="350" class="rounded-image">
+<p>
+
+</center>
+
+
+<hr>
+
+<center> <b> <p style=" font-size: 28px; color: #940031;"> Making video edits! </center> </p> </b>
+
+<center>
+<video width="560" height="315" controls class="rounded-image">
+        <source src="edit1.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+<video width="560" height="315" controls class="rounded-image">
+        <source src="edit2.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+<p>
+<video width="560" height="315" controls class="rounded-image">
+        <source src="edit3.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+<video width="560" height="315" controls class="rounded-image">
+        <source src="edit4.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+</center>
+
+<div class="container">
+        <div class="paragraph">
+             <p style="font-size: 19px;">
+                In my free time, I love to channel my creativity by making edits of my current hyperfixations. These can range from video games to my favorite musicians and anime. Each project allows me to immerse myself deeply in the subject matter, whether it's capturing the dynamic action of a game, highlighting the talent and personality of a beloved artist, or bringing to life the vibrant world of an anime series. Through editing, I can express my passion and appreciation for these interests in a unique and personalized way. <p>
+
+</div>
+</div>
+
+<div class="container">
+        <div class="paragraph">
+             <p style="font-size: 19px;">
+
+Creating these edits involves a lot of detailed work, from selecting the perfect clips and music to fine-tuning transitions and effects. It's a rewarding process that not only enhances my technical skills but also deepens my connection to the things I love. Sharing these edits with others who share my interests adds another layer of enjoyment, as it opens up opportunities for feedback, collaboration, and community building. Ultimately, this hobby is a perfect blend of creativity and fandom, making my leisure time both productive and enjoyable. <p>
+
+</div>
+</div>
+
+
+
+    <div style="text-align: right;">
+        <a href="#top" class="jump-button">^JUMP to top!^</a>
+    </div>
+
+</div>
+    <footer class="footer-2">
+        &copy; 2024 Sofea Website. All rights reserved.
+    </footer>
+
+<center>
+    <p> <img src="blinkies.gif" width="400" height="55"> <p>
+</center>
+
+<section style="background-color:#f5cfff;">
+  <footer>
+    <center> 
+    <u> Check out my social media! </u><p>
+    <a href="https://wa.me/+601128652143" target="_blank" class="fab fa-whatsapp"> Whatsapp</a> <br> <p>
+    <a href="https://www.instagram.com/_soupeah/?next=%2F" target="_blank" class="fab fa-instagram">Instagram </a> <br> <p>
+    <a href="https://x.com/eriskyx" target="_blank" class="fas fa-envelope">Twitter</a> <br> <p>      <a href="https://x.com/eriskyx" target="_blank" class="fas fa-heart"></a> <br> <p>  <p>
+
+    </center>
+  </footer>
+</section>
+
+</body>
+</html>
